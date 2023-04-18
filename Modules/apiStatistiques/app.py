@@ -24,6 +24,11 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from pydantic import BaseModel
 import random
+import os
+
+dossierTravail = "/ENTREPRISE_FILES/"
+if not os.path.isdir(dossierTravail):
+    os.makedirs(dossierTravail)
 
 fake_users_db = {
     "johndoe": {
@@ -122,7 +127,7 @@ async def read_users(token, credentials: HTTPAuthorizationCredentials = Depends(
     return {"token": token}
 
 # Connexion à la base de données MySQL via SQLAlchemy
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root@localhost/ventes"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:mypassword@studistatistiques_db_1:3306/ventes"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
