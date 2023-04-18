@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "1007dc6f-0a79-45e9-b1c2-8f6d6503d4ca",
+		"name": "API PYTHON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18951922"
+	},
+	"item": [
+		{
+			"name": "getToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersMe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer johndoe",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bearer",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Authorization",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer johndoe",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bearer",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Authorization",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "panierMoyen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer johndoe",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bearer",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "johndoe",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "Authorization",
+							"value": "johndoe",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
