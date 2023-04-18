@@ -18,4 +18,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copier le code source
 COPY . /Modules
 
+EXPOSE 8000
+
 # CMD ["/usr/local/bin/python", "app.py"]
