@@ -9,16 +9,10 @@ RUN apt-get update && \
     apt-get install -y google-chrome-stable && \
     rm -rf /var/lib/apt/lists/*
 
-# Télécharger et installer ChromeDriver
-RUN wget -q https://chromedriver.storage.googleapis.com/111.0.5563.64/chromedriver_linux64.zip && \
-    unzip chromedriver_linux64.zip && \
-    mv chromedriver /usr/local/bin/ && \
-    rm chromedriver_linux64.zip
-
 # Installer les dépendances Python
-COPY Modules/ /OrisonCaptain/Modules/
-COPY requirements.txt /OrisonCaptain/requirements.txt
-WORKDIR /OrisonCaptain
+COPY Modules/ /StudiStatistiques/Modules/
+COPY requirements.txt /StudiStatistiques/requirements.txt
+WORKDIR /StudiStatistiques
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le code source

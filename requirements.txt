@@ -1,5 +1,9 @@
 Flask
 pandas
 numpy
-selenium
-paramiko
+fastapi
+starlette
+sqlalchemy
+pydantic
+typing
+jose
