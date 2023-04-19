@@ -15,4 +15,7 @@ Run :
     docker run --rm -it -d -p 0.0.0.0:8001:8001 --name python_studi_statistiques studi_statistiques:latest
     docker run --rm -it -d -p 81:8000 --name python_studi_statistiques studi_statistiques:latest
 
+    docker run -d --name mycontainer -p 80:80 myimage
+
+
 # Commandes utiles
