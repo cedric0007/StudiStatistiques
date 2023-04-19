@@ -12,12 +12,13 @@ RUN apt-get update && \
 # Installer les dépendances Python
 COPY Modules/ /StudiStatistiques/Modules/
 COPY requirements.txt /StudiStatistiques/requirements.txt
+COPY script.sh /StudiStatistiques
 WORKDIR /StudiStatistiques
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le code source
 COPY . /Modules
-
+ENTRYPOINT ["/bin/sh", "/StudiStatistiques/script.sh"]
 EXPOSE 8000
 
 # RUN docker network connect studistatistiques_default python_studi_statistiques
