@@ -24,6 +24,7 @@ Run :
 HOTE :
     docker run --rm -it -p 81:8000 -d --name python_studi_statistiques studi_statistiques:latest
     docker network connect studistatistiques_default python_studi_statistiques
+    docker network connect docker_dev python_studi_statistiques
 
 CONTAINER :
     (suppression restrictions sur /donneesDetailCollecte)

@@ -241,19 +241,28 @@ async def read_users(current_user: User = Depends(get_current_user)):
 
 @app.get("/depenses")
 async def get_depenses(current_user: User = Depends(get_current_user)):
-    return total_spending_by_category
+    # return total_spending_by_category
+    rertour_total_spending_by_category = [row._asdict() for row in total_spending_by_category]
+    return rertour_total_spending_by_category
+
 
 @app.get("/depenses/categories")
 async def get_depenses_categories(current_user: User = Depends(get_current_user)):
-    return total_depensesParCategorie
+    rertour_total_depensesParCategorie = [row._asdict() for row in total_depensesParCategorie]
+    return rertour_total_depensesParCategorie
 
 @app.get("/depenses/csp")
 async def get_depenses_csp(current_user: User = Depends(get_current_user)):
-    return total_depensesParCsp
+    # return total_depensesParCsp
+    rertour_total_depensesParCsp = [row._asdict() for row in total_depensesParCsp]
+    return rertour_total_depensesParCsp
+
 
 @app.get("/paniermoyen/categories")
 async def get_paniermoyen_categories(current_user: User = Depends(get_current_user)):
-    return average_basket_by_category
+    # return average_basket_by_category
+    rertour_average_basket_by_category = [row._asdict() for row in average_basket_by_category]
+    return rertour_average_basket_by_category
 
 # @app.get("/paniermoyen/csp")
 # async def get_paniermoyen_csp(current_user: User = Depends(get_current_user)):
@@ -262,7 +271,8 @@ async def get_paniermoyen_categories(current_user: User = Depends(get_current_us
 
 @app.get("/export")
 async def get_exportBrut(current_user: User = Depends(get_current_user)):
-    return donneesExport
+    rertour_donneesExport = [row._asdict() for row in donneesExport]
+    return rertour_donneesExport
 
 @app.get("/export_csv/{nbLignes}")
 async def get_export_csv(nbLignes : int, current_user: User = Depends(get_current_user)):
@@ -278,7 +288,7 @@ async def get_export_csv(nbLignes : int, current_user: User = Depends(get_curren
     return FileResponse("/ENTREPRISE_FILES/donneesExportCsv.csv", media_type='text/csv', filename='exported_data.csv')
 
 @app.get("/donneesDetailCollecte")
-async def get_donneesDetailCollecte(current_user: User = Depends(get_current_user)):
+async def get_donneesDetailCollecte():
     return donneesDetailCollecte
 
 # TO DO : ajouter sécurité
