@@ -18,8 +18,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copier le code source
 COPY . /Modules
 
-EXPOSE 8001
+EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "/StudiStatistiques/Modules/apiStatistiques/app.py", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 
 # CMD ["/usr/local/bin/python", "app.py"]

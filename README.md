@@ -9,12 +9,10 @@ Installation indépendant de l'application python puis connexion au mysql créé
     docker network connect studistatistiques_default python_studi_statistiques
 
 Installer les librairies manquantes :
-    cd Modules/apiStatistiques/
-    pip install python-jose[cryptography] passlib[bcrypt]
-    Run Api :
-        python app.py
+    cd Modules/apiStatistiques/ && pip install python-jose[cryptography] passlib[bcrypt] && python app.py
 
 Run :
     docker run --rm -it -d -p 0.0.0.0:8001:8001 --name python_studi_statistiques studi_statistiques:latest
+    docker run --rm -it -d -p 81:8000 --name python_studi_statistiques studi_statistiques:latest
 
 # Commandes utiles
