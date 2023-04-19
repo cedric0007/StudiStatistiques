@@ -20,7 +20,7 @@ COPY . /Modules
 
 EXPOSE 8000
 
-RUN docker network connect studistatistiques_default python_studi_statistiques
+# RUN docker network connect studistatistiques_default python_studi_statistiques
 
 # CMD ["uvicorn", "/StudiStatistiques/Modules/apiStatistiques/app.py", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 # CMD ["uvicorn", "apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
