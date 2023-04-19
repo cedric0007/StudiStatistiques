@@ -19,5 +19,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /Modules
 EXPOSE 8000
 
-ENTRYPOINT ["uvicorn", "Modules.apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
+# ENTRYPOINT ["uvicorn", "Modules.apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 
