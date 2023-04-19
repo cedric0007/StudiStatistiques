@@ -21,11 +21,15 @@ Run :
 
 # Commandes utiles
 
-docker run --rm -it -p 81:8000 -d --name python_studi_statistiques studi_statistiques:latest
-(suppression restrictions sur /donneesDetailCollecte)
+HOTE :
+    docker run --rm -it -p 81:8000 -d --name python_studi_statistiques studi_statistiques:latest
+    docker network connect studistatistiques_default python_studi_statistiques
 
-docker network connect studistatistiques_default python_studi_statistiques
-uvicorn Modules.apiStatistiques.app:app --proxy-headers --host 0.0.0.0 --port 80
-docker network inspect bridge
+CONTAINER :
+    (suppression restrictions sur /donneesDetailCollecte)
+    uvicorn Modules.apiStatistiques.app:app --proxy-headers --host 0.0.0.0 --port 80
+
+HOTE
+    docker network inspect bridge
     ==> obtention IP
-Répond avec l'adresse IP :  wget http://172.17.0.6/export
+Répond avec l'adresse IP :  wget http://172.17.0.6/donneesDetailCollecte
