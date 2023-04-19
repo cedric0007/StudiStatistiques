@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le code source
 COPY . /Modules
-# ENTRYPOINT ["/bin/sh", "/StudiStatistiques/script.sh"]
+ENTRYPOINT ["/bin/sh", "script.sh"]
 EXPOSE 8000
 
 # RUN docker network connect studistatistiques_default python_studi_statistiques
