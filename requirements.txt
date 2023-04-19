@@ -12,3 +12,4 @@ passlib
 python-multipart
 pymysql
 python-jose[cryptography]
+passlib[bcrypt]
