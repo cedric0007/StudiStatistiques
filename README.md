@@ -11,3 +11,7 @@ Installation indépendant de l'application python puis connexion au mysql créé
 Installer les librairies manquantes :
     pip install python-jose[cryptography] passlib[bcrypt]
 
+Run :
+    docker run --rm -it -d -p 8001:8000 --name python_studi_statistiques studi_statistiques:latest
+
+# Commandes utiles
