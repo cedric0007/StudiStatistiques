@@ -23,6 +23,6 @@ EXPOSE 8000
 # CMD ["uvicorn", "/StudiStatistiques/Modules/apiStatistiques/app.py", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 # CMD ["uvicorn", "apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 # CMD ["uvicorn", "Modules.apiStatistiques:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]]
-CMD ["uvicorn", "apiStatistiques.app:Modules", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "Modules.apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 
 # CMD ["/usr/local/bin/python", "app.py"]
