@@ -12,20 +12,12 @@ RUN apt-get update && \
 # Installer les dépendances Python
 COPY Modules/ /StudiStatistiques/Modules/
 COPY requirements.txt /StudiStatistiques/requirements.txt
-COPY script.sh /StudiStatistiques/script.sh
 WORKDIR /StudiStatistiques
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copier le code source
 COPY . /Modules
-ENTRYPOINT ["/bin/sh", "script.sh"]
 EXPOSE 8000
 
-# RUN docker network connect studistatistiques_default python_studi_statistiques
+ENTRYPOINT ["uvicorn", "Modules.apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
 
-# CMD ["uvicorn", "/StudiStatistiques/Modules/apiStatistiques/app.py", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
-# CMD ["uvicorn", "apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
-# CMD ["uvicorn", "Modules.apiStatistiques:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]]
-# CMD ["uvicorn", "Modules.apiStatistiques.app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80"]
-
-# CMD ["/usr/local/bin/python", "app.py"]
