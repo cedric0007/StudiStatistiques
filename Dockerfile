@@ -12,7 +12,7 @@ RUN apt-get update && \
 # Installer les dépendances Python
 COPY Modules/ /StudiStatistiques/Modules/
 COPY requirements.txt /StudiStatistiques/requirements.txt
-COPY script.sh /StudiStatistiques
+COPY script.sh /StudiStatistiques/script.sh
 WORKDIR /StudiStatistiques
 RUN pip install --no-cache-dir -r requirements.txt
 
