@@ -11,3 +11,4 @@ uvicorn
 passlib
 python-multipart
 pymysql
+python-jose[cryptography]
