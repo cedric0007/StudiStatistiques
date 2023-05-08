@@ -197,6 +197,9 @@ depenses = depenses.select_from(DetailCollecte)\
 depenses = depenses.group_by(Client.classe_socio_professionnelle, Categorie.libelle)
 total_spending_by_category = depenses.all()
 
+def get_total_spending_by_category():
+    return total_spending_by_category
+    
 # les dépenses par catégorie en fonction de la catégorie socioprofessionnelle ;
 depensesParCsp = session.query(Client.classe_socio_professionnelle.label('label'), func.sum(DetailCollecte.montant).label('montant_total'))
 depensesParCsp = depensesParCsp.select_from(DetailCollecte)\
@@ -206,6 +209,9 @@ depensesParCsp = depensesParCsp.select_from(DetailCollecte)\
 depensesParCsp = depensesParCsp.group_by(Client.classe_socio_professionnelle)
 total_depensesParCsp = depensesParCsp.all()
 
+def get_total_depensesParCsp():
+    return total_depensesParCsp
+
 # les dépenses par catégorie en fonction de la catégorie socioprofessionnelle ;
 depensesParCategorie = session.query(Categorie.libelle.label('label'), func.sum(DetailCollecte.montant).label('montant_total'))
 depensesParCategorie = depensesParCategorie.select_from(DetailCollecte)\
@@ -214,6 +220,9 @@ depensesParCategorie = depensesParCategorie.select_from(DetailCollecte)\
     .join(Categorie, DetailCollecte.categorie_id == Categorie.id)
 depensesParCategorie = depensesParCategorie.group_by(Categorie.libelle)
 total_depensesParCategorie = depensesParCategorie.all()
+
+def get_total_depensesParCategorie():
+    return total_depensesParCategorie
 
 # donneesExport ;
 donneesExport = session.query(Client.classe_socio_professionnelle, Categorie.libelle, DetailCollecte.montant)
